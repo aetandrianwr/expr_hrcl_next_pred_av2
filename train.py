@@ -124,26 +124,27 @@ def main():
     
     # Hyperparameters
     config = {
-        'd_model': 64,
+        'd_model': 96,
         'nhead': 4,
-        'num_main_layers': 2,
+        'num_main_layers': 3,
         'num_fusion_layers': 2,
-        'dropout': 0.2,
-        'num_locations': 1200,  # Slightly larger than max observed
-        'num_users': 50,
-        'num_weekdays': 7,
-        'num_s2_l11': 320,
-        'num_s2_l12': 670,
-        'num_s2_l13': 930,
-        'num_s2_l14': 1250,
-        'num_s2_l15': 1250,
+        'dropout': 0.3,
+        'num_locations': 1200,  # max=1186 + buffer
+        'num_users': 50,  # max=45 + buffer
+        'num_weekdays': 8,  # max=6 + buffer (0-6)
+        'num_s2_l11': 320,  # max=313 + buffer
+        'num_s2_l12': 680,  # max=672 + buffer
+        'num_s2_l13': 930,  # max=925 + buffer
+        'num_s2_l14': 1260,  # max=1248 + buffer
+        'num_s2_l15': 1260,
     }
     
-    batch_size = 128
-    learning_rate = 0.001
-    num_epochs = 100
-    patience = 15
+    batch_size = 96
+    learning_rate = 0.0005
+    num_epochs = 150
+    patience = 20
     max_len = 60
+    label_smoothing = 0.1
     
     # Create model
     model = HierarchicalTransformer(config).to(device)
@@ -162,9 +163,9 @@ def main():
     print(f"Train batches: {len(train_loader)}, Val batches: {len(val_loader)}, Test batches: {len(test_loader)}")
     
     # Loss and optimizer
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(label_smoothing=label_smoothing)
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0.01)
-    scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=5, verbose=True)
+    scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=7, verbose=True, min_lr=1e-6)
     
     # Training loop
     best_val_acc = 0

@@ -1,0 +1,85 @@
+Using device: cuda
+Model parameters: 493,440
+Loading data...
+Train batches: 58, Val batches: 27, Test batches: 28
+
+================================================================================
+Starting training...
+================================================================================
+
+Epoch 1 [Train]:   0%|          | 0/58 [00:00<?, ?it/s]Epoch 1 [Train]:   0%|          | 0/58 [00:02<?, ?it/s, loss=7.13]Epoch 1 [Train]:   2%|▏         | 1/58 [00:02<02:16,  2.39s/it, loss=7.13]Epoch 1 [Train]:   2%|▏         | 1/58 [00:02<02:16,  2.39s/it, loss=7.04]Epoch 1 [Train]:   2%|▏         | 1/58 [00:02<02:16,  2.39s/it, loss=7.01]Epoch 1 [Train]:   5%|▌         | 3/58 [00:02<00:36,  1.52it/s, loss=7.01]Epoch 1 [Train]:   5%|▌         | 3/58 [00:02<00:36,  1.52it/s, loss=6.96]Epoch 1 [Train]:   5%|▌         | 3/58 [00:02<00:36,  1.52it/s, loss=6.92]Epoch 1 [Train]:   9%|▊         | 5/58 [00:02<00:19,  2.75it/s, loss=6.92]Epoch 1 [Train]:   9%|▊         | 5/58 [00:02<00:19,  2.75it/s, loss=6.88]Epoch 1 [Train]:   9%|▊         | 5/58 [00:02<00:19,  2.75it/s, loss=6.85]Epoch 1 [Train]:  12%|█▏        | 7/58 [00:02<00:11,  4.30it/s, loss=6.85]Epoch 1 [Train]:  12%|█▏        | 7/58 [00:02<00:11,  4.30it/s, loss=6.82]Epoch 1 [Train]:  12%|█▏        | 7/58 [00:02<00:11,  4.30it/s, loss=6.79]Epoch 1 [Train]:  16%|█▌        | 9/58 [00:02<00:08,  6.08it/s, loss=6.79]Epoch 1 [Train]:  16%|█▌        | 9/58 [00:02<00:08,  6.08it/s, loss=6.75]Epoch 1 [Train]:  16%|█▌        | 9/58 [00:03<00:08,  6.08it/s, loss=6.72]Epoch 1 [Train]:  19%|█▉        | 11/58 [00:03<00:06,  7.35it/s, loss=6.72]Epoch 1 [Train]:  19%|█▉        | 11/58 [00:03<00:06,  7.35it/s, loss=6.7] Epoch 1 [Train]:  19%|█▉        | 11/58 [00:03<00:06,  7.35it/s, loss=6.68]Epoch 1 [Train]:  22%|██▏       | 13/58 [00:03<00:04,  9.20it/s, loss=6.68]Epoch 1 [Train]:  22%|██▏       | 13/58 [00:03<00:04,  9.20it/s, loss=6.65]Epoch 1 [Train]:  22%|██▏       | 13/58 [00:03<00:04,  9.20it/s, loss=6.63]Epoch 1 [Train]:  22%|██▏       | 13/58 [00:03<00:04,  9.20it/s, loss=6.61]Epoch 1 [Train]:  28%|██▊       | 16/58 [00:03<00:03, 12.02it/s, loss=6.61]Epoch 1 [Train]:  28%|██▊       | 16/58 [00:03<00:03, 12.02it/s, loss=6.59]Epoch 1 [Train]:  28%|██▊       | 16/58 [00:03<00:03, 12.02it/s, loss=6.55]Epoch 1 [Train]:  28%|██▊       | 16/58 [00:03<00:03, 12.02it/s, loss=6.53]Epoch 1 [Train]:  33%|███▎      | 19/58 [00:03<00:02, 14.49it/s, loss=6.53]Epoch 1 [Train]:  33%|███▎      | 19/58 [00:03<00:02, 14.49it/s, loss=6.5] Epoch 1 [Train]:  33%|███▎      | 19/58 [00:03<00:02, 14.49it/s, loss=6.48]Epoch 1 [Train]:  33%|███▎      | 19/58 [00:03<00:02, 14.49it/s, loss=6.46]Epoch 1 [Train]:  38%|███▊      | 22/58 [00:03<00:02, 16.22it/s, loss=6.46]Epoch 1 [Train]:  38%|███▊      | 22/58 [00:03<00:02, 16.22it/s, loss=6.43]Epoch 1 [Train]:  38%|███▊      | 22/58 [00:03<00:02, 16.22it/s, loss=6.41]Epoch 1 [Train]:  38%|███▊      | 22/58 [00:03<00:02, 16.22it/s, loss=6.38]Epoch 1 [Train]:  43%|████▎     | 25/58 [00:03<00:01, 17.87it/s, loss=6.38]Epoch 1 [Train]:  43%|████▎     | 25/58 [00:03<00:01, 17.87it/s, loss=6.36]Epoch 1 [Train]:  43%|████▎     | 25/58 [00:03<00:01, 17.87it/s, loss=6.34]Epoch 1 [Train]:  43%|████▎     | 25/58 [00:03<00:01, 17.87it/s, loss=6.32]Epoch 1 [Train]:  48%|████▊     | 28/58 [00:03<00:01, 18.97it/s, loss=6.32]Epoch 1 [Train]:  48%|████▊     | 28/58 [00:03<00:01, 18.97it/s, loss=6.3] Epoch 1 [Train]:  48%|████▊     | 28/58 [00:03<00:01, 18.97it/s, loss=6.28]Epoch 1 [Train]:  48%|████▊     | 28/58 [00:04<00:01, 18.97it/s, loss=6.26]Epoch 1 [Train]:  53%|█████▎    | 31/58 [00:04<00:01, 18.08it/s, loss=6.26]Epoch 1 [Train]:  53%|█████▎    | 31/58 [00:04<00:01, 18.08it/s, loss=6.24]Epoch 1 [Train]:  53%|█████▎    | 31/58 [00:04<00:01, 18.08it/s, loss=6.22]Epoch 1 [Train]:  53%|█████▎    | 31/58 [00:04<00:01, 18.08it/s, loss=6.19]Epoch 1 [Train]:  59%|█████▊    | 34/58 [00:04<00:01, 18.99it/s, loss=6.19]Epoch 1 [Train]:  59%|█████▊    | 34/58 [00:04<00:01, 18.99it/s, loss=6.17]Epoch 1 [Train]:  59%|█████▊    | 34/58 [00:04<00:01, 18.99it/s, loss=6.16]Epoch 1 [Train]:  59%|█████▊    | 34/58 [00:04<00:01, 18.99it/s, loss=6.14]Epoch 1 [Train]:  64%|██████▍   | 37/58 [00:04<00:01, 14.70it/s, loss=6.14]Epoch 1 [Train]:  64%|██████▍   | 37/58 [00:04<00:01, 14.70it/s, loss=6.12]Epoch 1 [Train]:  64%|██████▍   | 37/58 [00:04<00:01, 14.70it/s, loss=6.09]Epoch 1 [Train]:  67%|██████▋   | 39/58 [00:04<00:01, 13.18it/s, loss=6.09]Epoch 1 [Train]:  67%|██████▋   | 39/58 [00:04<00:01, 13.18it/s, loss=6.07]Epoch 1 [Train]:  67%|██████▋   | 39/58 [00:04<00:01, 13.18it/s, loss=6.05]Epoch 1 [Train]:  71%|███████   | 41/58 [00:04<00:01, 12.40it/s, loss=6.05]Epoch 1 [Train]:  71%|███████   | 41/58 [00:04<00:01, 12.40it/s, loss=6.04]Epoch 1 [Train]:  71%|███████   | 41/58 [00:05<00:01, 12.40it/s, loss=6.02]Epoch 1 [Train]:  74%|███████▍  | 43/58 [00:05<00:01, 12.50it/s, loss=6.02]Epoch 1 [Train]:  74%|███████▍  | 43/58 [00:05<00:01, 12.50it/s, loss=6]   Epoch 1 [Train]:  74%|███████▍  | 43/58 [00:05<00:01, 12.50it/s, loss=5.98]Epoch 1 [Train]:  78%|███████▊  | 45/58 [00:05<00:01, 11.76it/s, loss=5.98]Epoch 1 [Train]:  78%|███████▊  | 45/58 [00:05<00:01, 11.76it/s, loss=5.96]Epoch 1 [Train]:  78%|███████▊  | 45/58 [00:05<00:01, 11.76it/s, loss=5.93]Epoch 1 [Train]:  81%|████████  | 47/58 [00:05<00:00, 12.18it/s, loss=5.93]Epoch 1 [Train]:  81%|████████  | 47/58 [00:05<00:00, 12.18it/s, loss=5.91]Epoch 1 [Train]:  81%|████████  | 47/58 [00:05<00:00, 12.18it/s, loss=5.9] Epoch 1 [Train]:  84%|████████▍ | 49/58 [00:05<00:00, 12.10it/s, loss=5.9]Epoch 1 [Train]:  84%|████████▍ | 49/58 [00:05<00:00, 12.10it/s, loss=5.88]Epoch 1 [Train]:  84%|████████▍ | 49/58 [00:05<00:00, 12.10it/s, loss=5.86]Epoch 1 [Train]:  88%|████████▊ | 51/58 [00:05<00:00, 11.22it/s, loss=5.86]Epoch 1 [Train]:  88%|████████▊ | 51/58 [00:05<00:00, 11.22it/s, loss=5.84]Epoch 1 [Train]:  88%|████████▊ | 51/58 [00:05<00:00, 11.22it/s, loss=5.82]Epoch 1 [Train]:  91%|█████████▏| 53/58 [00:05<00:00, 12.10it/s, loss=5.82]Epoch 1 [Train]:  91%|█████████▏| 53/58 [00:05<00:00, 12.10it/s, loss=5.81]Epoch 1 [Train]:  91%|█████████▏| 53/58 [00:06<00:00, 12.10it/s, loss=5.8] Epoch 1 [Train]:  95%|█████████▍| 55/58 [00:06<00:00, 10.57it/s, loss=5.8]Epoch 1 [Train]:  95%|█████████▍| 55/58 [00:06<00:00, 10.57it/s, loss=5.78]Epoch 1 [Train]:  95%|█████████▍| 55/58 [00:06<00:00, 10.57it/s, loss=5.77]Epoch 1 [Train]:  98%|█████████▊| 57/58 [00:06<00:00, 11.54it/s, loss=5.77]Epoch 1 [Train]:  98%|█████████▊| 57/58 [00:06<00:00, 11.54it/s, loss=5.75]Epoch 1 [Train]: 100%|██████████| 58/58 [00:06<00:00,  9.10it/s, loss=5.75]
+[Val]:   0%|          | 0/27 [00:00<?, ?it/s]../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [230,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:975: indexSelectLargeIndex: block: [70,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+[Val]:   0%|          | 0/27 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/content/expr_hrcl_next_pred_av2/train.py", line 275, in <module>
+    main()
+  File "/content/expr_hrcl_next_pred_av2/train.py", line 192, in main
+    val_loss, val_perf = evaluate(model, val_loader, criterion, device, 'Val')
+  File "/content/expr_hrcl_next_pred_av2/train.py", line 90, in evaluate
+    total_loss += loss.item()
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

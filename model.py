@@ -85,24 +85,20 @@ class HierarchicalTransformer(nn.Module):
         
         # Main stream embeddings (for X and auxiliary features)
         self.loc_embedding = nn.Embedding(self.num_locations, self.d_model)
-        self.user_embedding = nn.Embedding(self.num_users, self.d_model // 4)
+        self.user_embedding = nn.Embedding(self.num_users, self.d_model // 2)
         self.weekday_embedding = nn.Embedding(self.num_weekdays, self.d_model // 4)
         
         # Project concatenated embeddings to d_model
-        input_dim = self.d_model + self.d_model // 4 + self.d_model // 4
+        input_dim = self.d_model + self.d_model // 2 + self.d_model // 4
         self.input_proj = nn.Linear(input_dim, self.d_model)
+        self.input_norm = nn.LayerNorm(self.d_model)
         
-        # S2 level embeddings (smaller dimension for efficiency)
-        s2_dim = self.d_model // 2
+        # S2 level embeddings
+        s2_dim = self.d_model
         self.s2_l11_embedding = nn.Embedding(self.num_s2_l11, s2_dim)
         self.s2_l12_embedding = nn.Embedding(self.num_s2_l12, s2_dim)
         self.s2_l13_embedding = nn.Embedding(self.num_s2_l13, s2_dim)
         self.s2_l14_embedding = nn.Embedding(self.num_s2_l14, s2_dim)
-        
-        # Project S2 embeddings to d_model for cross-attention
-        self.s2_projs = nn.ModuleList([
-            nn.Linear(s2_dim, self.d_model) for _ in range(4)
-        ])
         
         # Positional encoding
         self.pos_encoder = PositionalEncoding(self.d_model, max_len=100)
@@ -110,7 +106,7 @@ class HierarchicalTransformer(nn.Module):
         
         # Main transformer layers
         self.main_layers = nn.ModuleList([
-            CausalTransformerBlock(self.d_model, self.nhead, self.d_model * 2, self.dropout)
+            CausalTransformerBlock(self.d_model, self.nhead, self.d_model * 4, self.dropout)
             for _ in range(self.num_main_layers)
         ])
         
@@ -123,14 +119,16 @@ class HierarchicalTransformer(nn.Module):
         # Fusion layers after concatenation
         # Input will be d_model (main) + 4 * d_model (cross-attention outputs)
         self.fusion_proj = nn.Linear(5 * self.d_model, self.d_model)
+        self.fusion_norm = nn.LayerNorm(self.d_model)
         self.fusion_layers = nn.ModuleList([
-            CausalTransformerBlock(self.d_model, self.nhead, self.d_model * 2, self.dropout)
+            CausalTransformerBlock(self.d_model, self.nhead, self.d_model * 4, self.dropout)
             for _ in range(self.num_fusion_layers)
         ])
         
-        # Output head
+        # Output head with intermediate layer
         self.output_norm = nn.LayerNorm(self.d_model)
-        self.classifier = nn.Linear(self.d_model, self.num_locations)
+        self.pre_classifier = nn.Linear(self.d_model, self.d_model * 2)
+        self.classifier = nn.Linear(self.d_model * 2, self.num_locations)
         
         self._init_weights()
         
@@ -161,12 +159,13 @@ class HierarchicalTransformer(nn.Module):
         # === Main stream ===
         # Embed main features
         loc_emb = self.loc_embedding(x)  # [B, T, d_model]
-        user_emb = self.user_embedding(user_x)  # [B, T, d_model//4]
+        user_emb = self.user_embedding(user_x)  # [B, T, d_model//2]
         weekday_emb = self.weekday_embedding(weekday_x)  # [B, T, d_model//4]
         
         # Concatenate and project
         main_features = torch.cat([loc_emb, user_emb, weekday_emb], dim=-1)
         main_stream = self.input_proj(main_features)  # [B, T, d_model]
+        main_stream = self.input_norm(main_stream)
         main_stream = self.pos_encoder(main_stream)
         
         # Generate causal mask
@@ -185,11 +184,10 @@ class HierarchicalTransformer(nn.Module):
             self.s2_l14_embedding(s2_l14),
         ]
         
-        # Project and add positional encoding
+        # Add positional encoding
         s2_streams = []
-        for emb, proj in zip(s2_embeddings, self.s2_projs):
-            stream = proj(emb)  # [B, T, d_model]
-            stream = self.s2_pos_encoder(stream)
+        for emb in s2_embeddings:
+            stream = self.s2_pos_encoder(emb)
             s2_streams.append(stream)
         
         # === Cross-attention ===
@@ -204,6 +202,7 @@ class HierarchicalTransformer(nn.Module):
         # Concatenate main stream with all cross-attention outputs
         fused = torch.cat([main_stream] + cross_outputs, dim=-1)  # [B, T, 5*d_model]
         fused = self.fusion_proj(fused)  # [B, T, d_model]
+        fused = self.fusion_norm(fused)
         
         # Pass through fusion layers
         for layer in self.fusion_layers:
@@ -218,7 +217,9 @@ class HierarchicalTransformer(nn.Module):
         batch_indices = torch.arange(B, device=device)
         final_repr = fused[batch_indices, seq_lengths]  # [B, d_model]
         
-        # Classify
-        logits = self.classifier(final_repr)  # [B, num_locations]
+        # Classify with intermediate layer
+        hidden = F.relu(self.pre_classifier(final_repr))
+        hidden = F.dropout(hidden, p=self.dropout, training=self.training)
+        logits = self.classifier(hidden)  # [B, num_locations]
         
         return logits
