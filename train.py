@@ -8,7 +8,7 @@ import os
 import json
 from tqdm import tqdm
 
-from model import HierarchicalTransformer
+from model_v2 import HierarchicalTransformerV2 as HierarchicalTransformer
 from dataset import get_dataloaders
 from metrics import calculate_correct_total_prediction, get_performance_dict
 
@@ -124,27 +124,25 @@ def main():
     
     # Hyperparameters
     config = {
-        'd_model': 96,
+        'd_model': 88,
         'nhead': 4,
-        'num_main_layers': 3,
-        'num_fusion_layers': 2,
-        'dropout': 0.3,
-        'num_locations': 1200,  # max=1186 + buffer
-        'num_users': 50,  # max=45 + buffer
-        'num_weekdays': 8,  # max=6 + buffer (0-6)
-        'num_s2_l11': 320,  # max=313 + buffer
-        'num_s2_l12': 680,  # max=672 + buffer
-        'num_s2_l13': 930,  # max=925 + buffer
-        'num_s2_l14': 1260,  # max=1248 + buffer
-        'num_s2_l15': 1260,
+        'num_layers': 4,
+        'dropout': 0.25,
+        'num_locations': 1200,
+        'num_users': 50,
+        'num_weekdays': 8,
+        'num_s2_l11': 320,
+        'num_s2_l12': 680,
+        'num_s2_l13': 930,
+        'num_s2_l14': 1260,
     }
     
-    batch_size = 96
-    learning_rate = 0.0005
+    batch_size = 64
+    learning_rate = 0.001
     num_epochs = 150
     patience = 20
     max_len = 60
-    label_smoothing = 0.1
+    label_smoothing = 0.05
     
     # Create model
     model = HierarchicalTransformer(config).to(device)

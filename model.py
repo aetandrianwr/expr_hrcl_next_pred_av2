@@ -127,8 +127,8 @@ class HierarchicalTransformer(nn.Module):
         
         # Output head with intermediate layer
         self.output_norm = nn.LayerNorm(self.d_model)
-        self.pre_classifier = nn.Linear(self.d_model, self.d_model * 2)
-        self.classifier = nn.Linear(self.d_model * 2, self.num_locations)
+        self.pre_classifier = nn.Linear(self.d_model, self.d_model)
+        self.classifier = nn.Linear(self.d_model, self.num_locations)
         
         self._init_weights()
         
