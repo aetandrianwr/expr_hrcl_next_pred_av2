@@ -8,7 +8,7 @@ import os
 import json
 from tqdm import tqdm
 
-from model_v2 import HierarchicalTransformerV2 as HierarchicalTransformer
+from model_v3 import SimpleHierarchicalTransformer as HierarchicalTransformer
 from dataset import get_dataloaders
 from metrics import calculate_correct_total_prediction, get_performance_dict
 
@@ -122,12 +122,12 @@ def main():
     # Data directory
     data_dir = '/content/expr_hrcl_next_pred_av2/data/geolife'
     
-    # Hyperparameters
+    # Hyperparameters  
     config = {
-        'd_model': 88,
+        'd_model': 96,
         'nhead': 4,
         'num_layers': 4,
-        'dropout': 0.25,
+        'dropout': 0.2,
         'num_locations': 1200,
         'num_users': 50,
         'num_weekdays': 8,
@@ -137,10 +137,10 @@ def main():
         'num_s2_l14': 1260,
     }
     
-    batch_size = 64
-    learning_rate = 0.001
-    num_epochs = 150
-    patience = 20
+    batch_size = 128
+    learning_rate = 0.002
+    num_epochs = 80
+    patience = 15
     max_len = 60
     label_smoothing = 0.05
     
